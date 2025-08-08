@@ -122,7 +122,9 @@ function Personen() {
                 </tr>
                 </thead>
                 <tbody>
-                {personen.map((p) => (
+                {personen
+                    .filter((p) => p.firma && p.abteilung)
+                    .map((p) => (
                     <tr key={p.id}>
                         <td>{p.id}</td>
                         <td>{p.vorname}</td>
